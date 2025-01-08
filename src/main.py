@@ -5,21 +5,33 @@ import os
 import sys
 
 def open_projectile_visualizer():
-    """Open the projectile motion visualizer and exit the homepage."""
-    root.destroy()  # Close the homepage window
+    """Open the projectile motion visualizer and return to the homepage after it closes."""
+    root.withdraw()  # Hide the homepage window
     try:
         # Run the projectile motion visualizer
         subprocess.run([sys.executable, os.path.join("src", "projectiles.py")], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error running projectile visualizer: {e}")
     finally:
-        # Exit the entire application after the visualizer is closed
-        sys.exit()
+        # Show the homepage window again after the visualizer closes
+        root.deiconify()
+
+def open_double_pendulum_visualizer():
+    """Open the double pendulum visualizer and return to the homepage after it closes."""
+    root.withdraw()  # Hide the homepage window
+    try:
+        # Run the double pendulum visualizer
+        subprocess.run([sys.executable, os.path.join("src", "double_pendulum.py")], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running double pendulum visualizer: {e}")
+    finally:
+        # Show the homepage window again after the visualizer closes
+        root.deiconify()
 
 # Create the homepage window
 root = tk.Tk()
 root.title("Visumatic")
-root.geometry("600x400")
+root.geometry("700x500")
 root.configure(bg="#040444")  # Dark background color
 
 # Load and resize the logo
@@ -28,7 +40,7 @@ try:
     original_logo = Image.open(logo_path)
     resized_logo = original_logo.resize((325, 244), Image.Resampling.LANCZOS)  # High-quality resize
     logo = ImageTk.PhotoImage(resized_logo)
-    logo_label = tk.Label(root, image=logo, bg="#282c34")
+    logo_label = tk.Label(root, image=logo, bg="#040444")
     logo_label.pack(pady=20)
 except Exception as e:
     print(f"Error loading or resizing logo: {e}")
@@ -43,18 +55,35 @@ label = tk.Label(
 )
 label.pack(pady=10)
 
-# Add a button to navigate to the projectile visualizer
+# Create a frame for the buttons
+button_frame = tk.Frame(root, bg="#040444")
+button_frame.pack(pady=20)
+
+# Add a button for the projectile motion visualizer
 button = tk.Button(
-    root, 
+    button_frame, 
     text="Projectile Motion", 
     font=("Helvetica", 16), 
     fg="black", 
-    bg="#61afef", 
-    activebackground="#528aa5", 
+    bg="white", 
+    activebackground="black", 
     activeforeground="white", 
     command=open_projectile_visualizer
 )
-button.pack(pady=20)
+button.grid(row=0, column=0, padx=20, pady=10)
+
+# Add a button for the double pendulum visualizer
+double_pendulum_button = tk.Button(
+    button_frame, 
+    text="Double Pendulum", 
+    font=("Helvetica", 16), 
+    fg="black", 
+    bg="white", 
+    activebackground="black", 
+    activeforeground="white", 
+    command=open_double_pendulum_visualizer
+)
+double_pendulum_button.grid(row=0, column=1, padx=20, pady=10)
 
 # Run the Tkinter event loop
 root.mainloop()
