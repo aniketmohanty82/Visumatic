@@ -1,20 +1,6 @@
 # Visumatic
 
 An interactive tool for visualizing different physcial mathematical phenomenon with customizable parameters.
-
-## Projectile Motion:
-### Features
-- **Interactive 3D Visualization**: Observe the trajectory of a projectile in real-time.
-- **Dynamic Sliders**: Adjust key parameters such as:
-  - Initial velocity
-  - Launch angle
-  - Lateral velocity
-  - Initial height
-
-### Requirements
-- Python 3.7+
-- Compatible with macOS, Linux, and Windows.
-
 ### How to Set Up and Run
 
 1. Clone the repository:
@@ -32,3 +18,25 @@ An interactive tool for visualizing different physcial mathematical phenomenon w
    chmod +x run.sh
    ./run.sh 
 
+## Projectile Motion:
+### Features
+- **Interactive 3D Visualization**: Observe the trajectory of a projectile in real-time.
+- **Dynamic Sliders**: Adjust key parameters such as:
+  - Initial velocity
+  - Launch angle
+  - Lateral velocity
+  - Initial height
+
+### Requirements
+- Python 3.7+
+- Compatible with macOS, Linux, and Windows.
+
+## Double Pendulum:
+### Features
+- **Interactive 3D Visualization**: Observe the trajectory of a projectile in real-time.
+- **Dynamic Sliders**: Adjust key parameters such as:
+  - x,y,z
+
+### Requirements
+- Python 3.7+
+- Compatible with macOS, Linux, and Windows.
