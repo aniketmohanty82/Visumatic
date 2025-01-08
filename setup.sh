@@ -15,4 +15,4 @@ pip install -r requirements.txt
 
 # Step 4: Run the program
 echo "Running the program..."
-python src/projectiles.py
+python src/main.py
