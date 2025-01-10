@@ -28,6 +28,18 @@ def open_double_pendulum_visualizer():
         # Show the homepage window again after the visualizer closes
         root.deiconify()
 
+def open_vectors_visualizer():
+    """Open the vectors visualizer and return to the homepage after it closes."""
+    root.withdraw()  # Hide the homepage window
+    try:
+        # Run the vectors visualizer
+        subprocess.run([sys.executable, os.path.join("src", "vectors.py")], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running vectors visualizer: {e}")
+    finally:
+        # Show the homepage window again after the visualizer closes
+        root.deiconify()
+
 # Create the homepage window
 root = tk.Tk()
 root.title("Visumatic")
@@ -84,6 +96,19 @@ double_pendulum_button = tk.Button(
     command=open_double_pendulum_visualizer
 )
 double_pendulum_button.grid(row=0, column=1, padx=20, pady=10)
+
+# Add a button for the vectors visualizer
+vectors_button = tk.Button(
+    button_frame, 
+    text="Vectors", 
+    font=("Helvetica", 16), 
+    fg="black", 
+    bg="white", 
+    activebackground="black", 
+    activeforeground="white", 
+    command=open_vectors_visualizer
+)
+vectors_button.grid(row=0, column=2, padx=20, pady=10)
 
 # Run the Tkinter event loop
 root.mainloop()
