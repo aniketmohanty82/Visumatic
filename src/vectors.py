@@ -82,7 +82,7 @@ def vector_addition_visualizer():
     input_frame = tk.Frame(root, bg="#f0f0f0", padx=10, pady=10)
     input_frame.pack(side=tk.RIGHT, fill=tk.Y)
 
-    tk.Label(input_frame, text="Vector 1 (i, j, k):", font=("Helvetica", 12, "bold")).pack(pady=10)
+    tk.Label(input_frame, text="Vector 1 (i, j, k):", font=("Helvetica", 12, "bold"), bg="#f0f0f0").pack(pady=10)
     vector1_i_entry = tk.Entry(input_frame, width=10, bg="#f0f0f0", fg="black")
     vector1_i_entry.pack(pady=5)
     vector1_j_entry = tk.Entry(input_frame, width=10, bg="#f0f0f0", fg="black")
@@ -90,7 +90,7 @@ def vector_addition_visualizer():
     vector1_k_entry = tk.Entry(input_frame, width=10, bg="#f0f0f0", fg="black")
     vector1_k_entry.pack(pady=5)
 
-    tk.Label(input_frame, text="Vector 2 (i, j, k):", font=("Helvetica", 12, "bold")).pack(pady=10)
+    tk.Label(input_frame, text="Vector 2 (i, j, k):", font=("Helvetica", 12, "bold"), bg="#f0f0f0").pack(pady=10)
     vector2_i_entry = tk.Entry(input_frame, width=10, bg="#f0f0f0", fg="black")
     vector2_i_entry.pack(pady=5)
     vector2_j_entry = tk.Entry(input_frame, width=10, bg="#f0f0f0", fg="black")
@@ -98,7 +98,7 @@ def vector_addition_visualizer():
     vector2_k_entry = tk.Entry(input_frame, width=10, bg="#f0f0f0", fg="black")
     vector2_k_entry.pack(pady=5)
 
-    calculate_button = tk.Button(input_frame, text="Calculate", command=calculate_vectors, bg="#f0f0f0", fg="white", font=("Helvetica", 12, "bold"))
+    calculate_button = tk.Button(input_frame, text="Calculate", command=calculate_vectors, bg="black", fg="white", font=("Helvetica", 12, "bold"))
     calculate_button.pack(pady=20)
 
     result_label = tk.Label(input_frame, text="Resultant Vector: \nMagnitude: ", font=("Helvetica", 12), fg="black", bg="#f0f0f0")
