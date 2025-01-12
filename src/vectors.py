@@ -6,8 +6,8 @@ import numpy as np
 
 def vector_addition_visualizer():
     """Run the vector addition visualizer."""
-    # Function to calculate and display the resultant vector
-    def calculate_vectors():
+    # Function to add and display the resultant vector
+    def add_vectors():
         try:
             # Get input values for vectors
             v1_i = float(vector1_i_entry.get())
@@ -21,6 +21,41 @@ def vector_addition_visualizer():
             resultant_i = v1_i + v2_i
             resultant_j = v1_j + v2_j
             resultant_k = v1_k + v2_k
+
+            # Compute the magnitude of the resultant vector
+            magnitude = np.sqrt(resultant_i**2 + resultant_j**2 + resultant_k**2)
+
+            # Update the result label
+            result_label.config(
+                text=f"Resultant Vector: {resultant_i:.2f}i, {resultant_j:.2f}j, {resultant_k:.2f}k\nMagnitude: {magnitude:.2f}"
+            )
+
+            # Plot the vectors in 3D
+            plot_vectors(
+                [v1_i, v1_j, v1_k],
+                [v2_i, v2_j, v2_k],
+                [resultant_i, resultant_j, resultant_k]
+            )
+
+        except ValueError:
+            messagebox.showerror("Invalid Input", "Please enter valid numbers for the vector components.")
+            
+            
+    # Function to subtract and display the resultant vector
+    def subtract_vectors():
+        try:
+            # Get input values for vectors
+            v1_i = float(vector1_i_entry.get())
+            v1_j = float(vector1_j_entry.get())
+            v1_k = float(vector1_k_entry.get())
+            v2_i = float(vector2_i_entry.get())
+            v2_j = float(vector2_j_entry.get())
+            v2_k = float(vector2_k_entry.get())
+
+            # Compute the resultant vector
+            resultant_i = v1_i - v2_i
+            resultant_j = v1_j - v2_j
+            resultant_k = v1_k - v2_k
 
             # Compute the magnitude of the resultant vector
             magnitude = np.sqrt(resultant_i**2 + resultant_j**2 + resultant_k**2)
@@ -102,9 +137,12 @@ def vector_addition_visualizer():
     vector2_k_entry = tk.Entry(input_frame, width=10, bg="#f0f0f0", fg="black")
     vector2_k_entry.pack(pady=5)
 
-    calculate_button = tk.Button(input_frame, text="Calculate", command=calculate_vectors, bg="white", fg="black", font=("Helvetica", 12, "bold"))
-    calculate_button.pack(pady=20)
+    add_button = tk.Button(input_frame, text="Add", command=add_vectors, bg="white", fg="black", font=("Helvetica", 12, "bold"))
+    add_button.pack(pady=20)
 
+    subtract_button = tk.Button(input_frame, text="Subtract", command=subtract_vectors, bg="white", fg="black", font=("Helvetica", 12, "bold"))
+    subtract_button.pack(pady=20)
+    
     result_label = tk.Label(input_frame, text="Resultant Vector: \nMagnitude: ", font=("Helvetica", 12), fg="black", bg="#f0f0f0")
     result_label.pack(pady=10)
 
