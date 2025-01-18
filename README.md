@@ -33,9 +33,14 @@ An interactive tool for visualizing different physcial mathematical phenomenon w
 
 ## Double Pendulum:
 ### Features
-- **Interactive 3D Visualization**: Observe the trajectory of a projectile in real-time.
+- **Interactive 3D Visualization**: Observe the motion of a double pendulum in real-time.
 - **Dynamic Sliders**: Adjust key parameters such as:
-  - x,y,z
+  - Initial angle 1 in radians
+  - Initial angle 2 in radians
+  - Length of arm of pendulum 1
+  - Length of arm of pendulum 2
+  - Mass of pendulum 1
+  - Mass of pendulum 2
 
 ### Requirements
 - Python 3.7+
