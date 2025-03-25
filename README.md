@@ -29,7 +29,7 @@ An interactive tool for visualizing different physcial mathematical phenomenon w
 
 ### Requirements
 - Python 3.7+
-- Compatible with macOS, Linux, and Windows.
+- Compatible with macOS, Linux, and Windows
 
 ## Double Pendulum:
 ### Features
@@ -44,4 +44,15 @@ An interactive tool for visualizing different physcial mathematical phenomenon w
 
 ### Requirements
 - Python 3.7+
-- Compatible with macOS, Linux, and Windows.
+- Compatible with macOS, Linux, and Windows
+
+## Vectors:
+### Features
+- **Interactive 3D Visualization**: Carrying out arithmetic operations like addition and subtraction of two vectors
+- **Dynamic Sliders**: Adjust key parameters such as:
+  - i, j, k values of vector 1
+  - i, j, k values of vector 2
+
+### Requirements
+- Python 3.7+
+- Compatible with macOS, Linux, and Windows
